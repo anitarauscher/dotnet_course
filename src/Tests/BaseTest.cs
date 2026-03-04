@@ -14,7 +14,11 @@ namespace Epam.Automation.src.Tests
         [SetUp]
         public void SetUp()
         {
-            var browser = ConfigManager.Instance.Get("Browser");
+            // Check if BROWSER environment variable is set (for CI/CD)
+            // Otherwise, fall back to config file (for local runs)
+            var browser = Environment.GetEnvironmentVariable("BROWSER") 
+                          ?? ConfigManager.Instance.Get("Browser");
+            
             _driver = DriverFactory.Instance.CreateDriver(browser);
             Logger.Info($"Browser started: {browser}");
         }
