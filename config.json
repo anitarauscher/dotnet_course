@@ -1,0 +1,8 @@
+{
+  "BaseUrl": "https://epam.com",
+  "WebUrl": "https://epam.com",
+  "ApiUrl": "https://jsonplaceholder.typicode.com",
+  "Browser": "chrome",
+  "LogLevel": "Info",
+  "ApiTimeoutInSeconds": 15
+}
